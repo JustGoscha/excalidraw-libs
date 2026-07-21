@@ -2,15 +2,25 @@
   "name": "excalidraw-libs",
   "version": "1.0.0",
   "description": "Open-source, CC0 Excalidraw libraries. Includes 'interactions': standard pointers & interaction indicators.",
-  "license": "CC0-1.0",
+  "license": "CC0-1.0 AND MIT",
   "author": "JustGoscha",
   "homepage": "https://github.com/JustGoscha/excalidraw-libs",
   "repository": {
     "type": "git",
     "url": "https://github.com/JustGoscha/excalidraw-libs.git"
   },
-  "keywords": ["excalidraw", "excalidraw-library", "cursors", "pointers", "ux", "cc0"],
+  "keywords": [
+    "excalidraw",
+    "excalidraw-library",
+    "cursors",
+    "pointers",
+    "ux",
+    "cc0"
+  ],
   "scripts": {
     "build": "bun interactions/src/build.mjs"
+  },
+  "devDependencies": {
+    "svg-path-properties": "^1.3.0"
   }
 }

@@ -1,12 +1,14 @@
 // Build script: generates interactions.excalidrawlib + preview.svg from one
 // geometry source. Original vector work — released CC0.
 // Run: bun src/build.mjs
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { svgPathProperties } from "svg-path-properties";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dir, "..", "dist");
+const ICONS = join(__dir, "icons");
 
 // ---- palette ------------------------------------------------------------
 const INK = "#1e1e1e";     // cursor outline / ink
@@ -109,27 +111,22 @@ function label(text, x, y) {
   });
 }
 
-// hand cursors — original, simplified line-icon style (stroke, not filled):
-// each finger is a rounded arch, the palm + thumb one smooth stroke. Inspired
-// by modern gesture icon sets, drawn from scratch (CC0).
-const HS = 0.82; // hand scale relative to other cursors
-// finger arch ∩: up left side, over the rounded top, down the right side
-const arch = (x, w, yTop, ylL, ylR) => [
-  [x, ylL], [x, yTop + 0.3], [x + w * 0.5, yTop], [x + w, yTop + 0.3], [x + w, ylR],
-];
-// palm + 4th finger + thumb, one continuous stroke. `nub` = top y of the 4th
-// finger; the rest of the hand body is shared across all three hands.
-const palm = (nub) => [
-  [17, nub + 1], [17, nub], [18.5, nub], [20, nub + 1],       // 4th finger nub
-  [20, 16], [19, 20], [16, 22], [12, 22], [8.5, 20.5],        // right side + bottom
-  [7, 18], [5.5, 15.5], [5, 14],                              // bottom-left / heel
-  [5.3, 12.8], [6.4, 13], [8, 14.5],                          // thumb
-];
-function handItem(name, fingers, nub) {
-  const strokes = [...fingers, palm(nub)].map((pts) =>
-    poly(pts.map(([x, y]) => [x * HS, y * HS]), { closed: false, w: 2 })
-  );
-  add(name, strokes);
+// hand cursors — filled silhouettes matching the Phosphor Icons "fill" style.
+// The three hand shapes are derived from Phosphor Icons (MIT) — see CREDITS.md.
+// Each source path outline is sampled into a filled Excalidraw polygon.
+const HANDSCALE = 0.09; // 256px viewBox -> cursor unit space
+function handItem(name, file) {
+  const svg = readFileSync(join(ICONS, file), "utf8");
+  const d = svg.match(/\bd="([^"]+)"/)[1];
+  const p = new svgPathProperties(d);
+  const L = p.getTotalLength();
+  const n = 64;
+  const pts = [];
+  for (let i = 0; i < n; i++) {
+    const { x, y } = p.getPointAtLength((i / n) * L);
+    pts.push([x * HANDSCALE, y * HANDSCALE]);
+  }
+  add(name, [poly(pts, { closed: true, fill: INK, stroke: INK, w: 1.5 })]);
 }
 
 // ---- geometry: cursors --------------------------------------------------
@@ -143,9 +140,7 @@ add("Pointer (Arrow)", [
     { closed: true, fill: FILL }),
 ]);
 
-// pointing hand: tall index (far left) + two folded-finger bumps + palm
-handItem("Hand pointer (Finger)",
-  [arch(8, 3, 4.5, 13, 12), arch(11, 3, 9.5, 12, 11.5), arch(14, 3, 10.5, 11.5, 11.5)], 11.5);
+handItem("Hand pointer (Finger)", "hand-pointing-fill.svg");
 
 // text I-beam
 add("Text (I-beam)", [
@@ -172,12 +167,8 @@ add("Resize ↔ (EW)", [ arrow([[0,0],[20,0]]) ]);
 add("Resize ⤡ (NWSE)", [ arrow([[0,0],[15,15]]) ]);
 add("Resize ⤢ (NESW)", [ arrow([[0,15],[15,0]]) ]);
 
-// grabbing (fist): four short finger bumps + palm
-handItem("Grabbing (closed hand)",
-  [arch(8, 3, 7.5, 11, 10.5), arch(11, 3, 6.5, 10.5, 10.5), arch(14, 3, 7.5, 10.5, 10.5)], 9.5);
-// grab (open hand): four fingers up (spread) + palm
-handItem("Grab (open hand)",
-  [arch(8, 3, 5.5, 13, 12), arch(11, 3, 3.5, 12, 12), arch(14, 3, 5.5, 12, 12)], 12);
+handItem("Grabbing (closed hand)", "hand-grabbing-fill.svg");
+handItem("Grab (open hand)", "hand-fill.svg");
 
 // not-allowed
 add("Not allowed", [

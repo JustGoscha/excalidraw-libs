@@ -48,4 +48,10 @@ Outputs `interactions/dist/interactions.excalidrawlib`, `preview.svg` and
 
 ## License
 
-[CC0 1.0 Universal](./LICENSE) — public domain dedication.
+[CC0 1.0 Universal](./LICENSE) — public domain dedication — for all original
+work (the arrow, text, crosshair, move, resize, not-allowed and zoom cursors,
+and every interaction indicator).
+
+The three **hand** shapes (*Hand pointer*, *Grab*, *Grabbing*) are derived from
+[Phosphor Icons](https://phosphoricons.com) and remain under the **MIT
+License**. See [CREDITS.md](./CREDITS.md).

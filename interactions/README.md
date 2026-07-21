@@ -31,12 +31,16 @@ recolor and rotate.
 ## Rebuild
 
 ```bash
+bun install        # once, for the svg-path-properties dev dependency
 bun src/build.mjs
 ```
 
 Geometry lives in [`src/build.mjs`](./src/build.mjs); it emits the
-`.excalidrawlib` and the SVG/PNG preview from the same point data.
+`.excalidrawlib` and the SVG/PNG preview from the same source. The three hand
+shapes are sampled from the Phosphor SVGs in [`src/icons/`](./src/icons).
 
 ## License
 
-CC0 1.0 — public domain. See the [repo LICENSE](../LICENSE).
+CC0 1.0 for all original shapes; the three hand cursors are derived from
+[Phosphor Icons](https://phosphoricons.com) (MIT). See
+[CREDITS.md](../CREDITS.md).
