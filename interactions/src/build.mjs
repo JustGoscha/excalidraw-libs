@@ -126,7 +126,7 @@ function handItem(name, file) {
     const { x, y } = p.getPointAtLength((i / n) * L);
     pts.push([x * HANDSCALE, y * HANDSCALE]);
   }
-  add(name, [poly(pts, { closed: true, fill: INK, stroke: INK, w: 1.5 })]);
+  add(name, [poly(pts, { closed: true, fill: FILL, stroke: INK, w: 2 })]);
 }
 
 // ---- geometry: cursors --------------------------------------------------
