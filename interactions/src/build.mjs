@@ -120,17 +120,18 @@ add("Pointer (Arrow)", [
     { closed: true, fill: FILL }),
 ]);
 
-// pointing hand (hyperlink hand): index finger up, thumb left, 3 folded
-// fingers as knuckle bumps on the right — the classic OS "link" cursor.
+// pointing hand (hyperlink hand): index finger up on the LEFT (not centered,
+// so it reads as pointing, not a rude gesture), thumb out left, folded fingers
+// as a lower rounded hump to the right — the classic OS "link" cursor.
 const HAND = [
-  [6.4,0.2],[7.3,0.7],[7.7,1.9],[7.7,7.2],        // index finger, right side down
-  [8.7,7.2],[9.1,6.4],[9.7,6.3],[10.1,6.9],        // folded finger 1 knuckle
-  [10.5,6.4],[11.1,6.5],[11.5,7.2],                // folded finger 2 knuckle
-  [11.9,7.1],[12.5,7.7],[12.7,9.2],                // folded finger 3 knuckle + outer palm
-  [12.6,15.6],[11.9,18.7],[10.6,20.4],[6.0,20.8],  // right side + bottom
-  [3.8,19.9],[3.3,17.0],                            // bottom-left
-  [2.3,13.6],[1.6,11.9],[1.9,10.7],[3.1,10.9],[3.6,9.6],  // thumb (out to the left)
-  [3.9,7.3],[5.1,7.0],[5.1,2.0],[5.5,0.7],          // left side up to finger tip
+  [4.6,0.2],[5.4,0.6],[5.8,1.7],[5.9,6.8],          // index finger, right side down
+  [6.8,6.6],[7.4,5.9],[8.2,5.8],[8.9,6.4],           // folded finger 1 (lower than index)
+  [9.3,6.0],[10.0,6.0],[10.6,6.6],                    // folded finger 2
+  [11.0,6.4],[11.6,6.7],[12.1,7.4],[12.4,8.8],       // folded finger 3 + outer palm
+  [12.3,14.8],[11.6,17.8],[10.3,19.4],[5.8,19.8],    // right side + bottom
+  [3.7,18.9],[3.2,16.2],                              // bottom-left / heel
+  [2.2,12.9],[1.5,11.3],[1.8,10.2],[3.0,10.4],[3.4,9.1], // thumb (out to the left)
+  [3.7,6.9],[3.7,2.0],[4.1,0.7],                      // left side up to finger tip
 ];
 add("Hand pointer (Finger)", [ poly(HAND, { closed: true, fill: FILL }) ]);
 
