@@ -109,6 +109,29 @@ function label(text, x, y) {
   });
 }
 
+// hand cursors — original, simplified line-icon style (stroke, not filled):
+// each finger is a rounded arch, the palm + thumb one smooth stroke. Inspired
+// by modern gesture icon sets, drawn from scratch (CC0).
+const HS = 0.82; // hand scale relative to other cursors
+// finger arch ∩: up left side, over the rounded top, down the right side
+const arch = (x, w, yTop, ylL, ylR) => [
+  [x, ylL], [x, yTop + 0.3], [x + w * 0.5, yTop], [x + w, yTop + 0.3], [x + w, ylR],
+];
+// palm + 4th finger + thumb, one continuous stroke. `nub` = top y of the 4th
+// finger; the rest of the hand body is shared across all three hands.
+const palm = (nub) => [
+  [17, nub + 1], [17, nub], [18.5, nub], [20, nub + 1],       // 4th finger nub
+  [20, 16], [19, 20], [16, 22], [12, 22], [8.5, 20.5],        // right side + bottom
+  [7, 18], [5.5, 15.5], [5, 14],                              // bottom-left / heel
+  [5.3, 12.8], [6.4, 13], [8, 14.5],                          // thumb
+];
+function handItem(name, fingers, nub) {
+  const strokes = [...fingers, palm(nub)].map((pts) =>
+    poly(pts.map(([x, y]) => [x * HS, y * HS]), { closed: false, w: 2 })
+  );
+  add(name, strokes);
+}
+
 // ---- geometry: cursors --------------------------------------------------
 // Each entry -> one library item: { name, shapes: [...] }
 const items = [];
@@ -120,20 +143,9 @@ add("Pointer (Arrow)", [
     { closed: true, fill: FILL }),
 ]);
 
-// pointing hand (hyperlink hand): index finger up on the LEFT (not centered,
-// so it reads as pointing, not a rude gesture), thumb out left, folded fingers
-// as a lower rounded hump to the right — the classic OS "link" cursor.
-const HAND = [
-  [4.6,0.2],[5.4,0.6],[5.8,1.7],[5.9,6.8],          // index finger, right side down
-  [6.8,6.6],[7.4,5.9],[8.2,5.8],[8.9,6.4],           // folded finger 1 (lower than index)
-  [9.3,6.0],[10.0,6.0],[10.6,6.6],                    // folded finger 2
-  [11.0,6.4],[11.6,6.7],[12.1,7.4],[12.4,8.8],       // folded finger 3 + outer palm
-  [12.3,14.8],[11.6,17.8],[10.3,19.4],[5.8,19.8],    // right side + bottom
-  [3.7,18.9],[3.2,16.2],                              // bottom-left / heel
-  [2.2,12.9],[1.5,11.3],[1.8,10.2],[3.0,10.4],[3.4,9.1], // thumb (out to the left)
-  [3.7,6.9],[3.7,2.0],[4.1,0.7],                      // left side up to finger tip
-];
-add("Hand pointer (Finger)", [ poly(HAND, { closed: true, fill: FILL }) ]);
+// pointing hand: tall index (far left) + two folded-finger bumps + palm
+handItem("Hand pointer (Finger)",
+  [arch(8, 3, 4.5, 13, 12), arch(11, 3, 9.5, 12, 11.5), arch(14, 3, 10.5, 11.5, 11.5)], 11.5);
 
 // text I-beam
 add("Text (I-beam)", [
@@ -160,31 +172,12 @@ add("Resize ↔ (EW)", [ arrow([[0,0],[20,0]]) ]);
 add("Resize ⤡ (NWSE)", [ arrow([[0,0],[15,15]]) ]);
 add("Resize ⤢ (NESW)", [ arrow([[0,15],[15,0]]) ]);
 
-// grabbing (closed fist): rounded body, 4 knuckle bumps across the top,
-// thumb tucked across the left — the pan "grabbing" cursor.
-const FIST = [
-  [3.3,8.8],[3.5,7.7],[4.4,7.2],[5.2,7.7],          // knuckle 1
-  [5.5,7.6],[5.9,7.0],[6.7,6.9],[7.1,7.5],          // knuckle 2
-  [7.4,7.4],[7.8,6.9],[8.6,6.9],[9.0,7.5],          // knuckle 3
-  [9.3,7.5],[9.7,7.1],[10.5,7.2],[11.1,7.9],        // knuckle 4
-  [11.5,9.3],[11.5,14.2],[10.7,16.9],[8.8,18.0],    // right side + bottom
-  [5.3,17.8],[3.5,16.3],[2.9,13.7],                  // bottom-left
-  [2.3,12.0],[2.5,10.7],[3.4,10.6],[3.9,11.2],       // thumb bump (front/left)
-  [3.6,9.8],
-];
-add("Grabbing (closed hand)", [ poly(FIST, { closed: true, fill: FILL }) ]);
-
-// grab (open hand): four fingers up (slightly spread) + thumb out left —
-// the pan "grab" / open-hand cursor.
-const OPEN = [
-  [4.6,6.6],[4.7,3.2],[5.1,2.6],[5.7,2.6],[6.1,3.2],[6.1,6.1],  // finger 1
-  [6.5,5.7],[6.6,2.1],[7.0,1.5],[7.6,1.5],[8.0,2.1],[8.1,5.7],  // finger 2 (tallest)
-  [8.5,6.0],[8.6,2.4],[9.0,1.8],[9.6,1.8],[10.0,2.4],[10.1,6.3],// finger 3
-  [10.5,6.5],[10.7,3.9],[11.1,3.3],[11.7,3.4],[12.1,4.1],[12.2,7.6], // finger 4 (pinky)
-  [12.1,13.6],[11.3,16.7],[9.0,18.1],[5.4,17.7],[3.8,15.8],     // right + bottom
-  [3.1,13.4],[2.0,11.6],[1.6,10.4],[2.3,9.6],[3.4,10.1],[4.0,9.1],[4.2,7.0], // thumb + left
-];
-add("Grab (open hand)", [ poly(OPEN, { closed: true, fill: FILL }) ]);
+// grabbing (fist): four short finger bumps + palm
+handItem("Grabbing (closed hand)",
+  [arch(8, 3, 7.5, 11, 10.5), arch(11, 3, 6.5, 10.5, 10.5), arch(14, 3, 7.5, 10.5, 10.5)], 9.5);
+// grab (open hand): four fingers up (spread) + palm
+handItem("Grab (open hand)",
+  [arch(8, 3, 5.5, 13, 12), arch(11, 3, 3.5, 12, 12), arch(14, 3, 5.5, 12, 12)], 12);
 
 // not-allowed
 add("Not allowed", [

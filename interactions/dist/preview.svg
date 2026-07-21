@@ -6,7 +6,10 @@
 <rect width="100%" height="100%" fill="#ffffff"/>
 <path d="M39.6 29.1 L39.6 90.5 L53.5 77.4 L63.1 98.9 L71.9 94.7 L61.9 73.6 L80.4 73.6 L39.6 29.1 Z" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="60" y="14" font-family="sans-serif" font-size="9" fill="#666" text-anchor="middle">Pointer (Arrow)</text>
-<path d="M171.1 27.0 L174.1 28.5 L175.7 32.7 L176.0 51.9 L179.4 51.2 L181.7 48.5 L184.7 48.1 L187.4 50.4 L188.9 48.9 L191.5 48.9 L193.8 51.2 L195.3 50.4 L197.6 51.5 L199.4 54.2 L200.6 59.5 L200.2 82.1 L197.6 93.4 L192.6 99.5 L175.7 101.0 L167.7 97.6 L165.8 87.4 L162.1 74.9 L159.4 68.9 L160.6 64.8 L165.1 65.5 L166.6 60.6 L167.7 52.3 L167.7 33.8 L169.2 28.9 L171.1 27.0 Z" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M165.8 63.2 L165.8 37.4 L170.6 36.4 L175.3 37.4 L175.3 60.1" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M175.3 60.1 L175.3 53.1 L180.0 52.2 L184.7 53.1 L184.7 58.5" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M184.7 58.5 L184.7 56.3 L189.4 55.3 L194.2 56.3 L194.2 58.5" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M194.2 61.6 L194.2 58.5 L198.9 58.5 L203.6 61.6 L203.6 72.7 L200.5 85.3 L191.0 91.6 L178.4 91.6 L167.4 86.8 L162.7 79.0 L158.0 71.1 L156.4 66.4 L157.3 62.6 L160.8 63.2 L165.8 67.9" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="180" y="14" font-family="sans-serif" font-size="9" fill="#666" text-anchor="middle">Hand pointer (Finger)</text>
 <path d="M288.9 27.0 L311.1 27.0" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M288.9 101.0 L311.1 101.0" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
@@ -28,9 +31,15 @@
 <text x="180" y="134" font-family="sans-serif" font-size="9" fill="#666" text-anchor="middle">Resize ⤡ (NWSE)</text>
 <path d="M271.2 212.8 L328.8 155.2" fill="none" stroke="#1e1e1e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#tri)" marker-start="url(#tris)"/>
 <text x="300" y="134" font-family="sans-serif" font-size="9" fill="#666" text-anchor="middle">Resize ⤢ (NESW)</text>
-<path d="M406.2 170.0 L406.9 165.8 L410.4 163.8 L413.5 165.8 L414.6 165.4 L416.2 163.1 L419.2 162.7 L420.8 165.0 L421.9 164.6 L423.5 162.7 L426.5 162.7 L428.1 165.0 L429.2 165.0 L430.8 163.5 L433.8 163.8 L436.1 166.5 L437.7 171.9 L437.7 190.7 L434.6 201.1 L427.3 205.3 L413.9 204.5 L406.9 198.8 L404.6 188.8 L402.3 182.3 L403.1 177.3 L406.6 176.9 L408.5 179.2 L407.3 173.8 L406.2 170.0 Z" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M405.8 173.8 L405.8 163.7 L410.6 162.7 L415.3 163.7 L415.3 172.2" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M415.3 172.2 L415.3 160.5 L420.0 159.6 L424.7 160.5 L424.7 172.2" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M424.7 172.2 L424.7 163.7 L429.4 162.7 L434.2 163.7 L434.2 172.2" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M434.2 172.2 L434.2 169.0 L438.9 169.0 L443.6 172.2 L443.6 189.5 L440.5 202.1 L431.0 208.4 L418.4 208.4 L407.4 203.7 L402.7 195.8 L398.0 187.9 L396.4 183.2 L397.3 179.4 L400.8 180.1 L405.8 184.8" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="420" y="134" font-family="sans-serif" font-size="9" fill="#666" text-anchor="middle">Grabbing (closed hand)</text>
-<path d="M531.2 171.7 L531.6 158.7 L533.1 156.4 L535.4 156.4 L536.9 158.7 L536.9 169.8 L538.5 168.3 L538.8 154.4 L540.4 152.1 L542.7 152.1 L544.2 154.4 L544.6 168.3 L546.1 169.4 L546.5 155.6 L548.1 153.3 L550.4 153.3 L551.9 155.6 L552.3 170.6 L553.8 171.3 L554.6 161.3 L556.1 159.0 L558.4 159.4 L560.0 162.1 L560.4 175.6 L560.0 198.6 L556.9 210.5 L548.1 215.9 L534.2 214.3 L528.1 207.0 L525.4 197.8 L521.2 190.9 L519.6 186.3 L522.3 183.2 L526.6 185.2 L528.9 181.3 L529.6 173.2 L531.2 171.7 Z" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M525.8 184.8 L525.8 162.1 L530.6 161.2 L535.3 162.1 L535.3 181.6" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M535.3 181.6 L535.3 155.8 L540.0 154.9 L544.7 155.8 L544.7 181.6" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M544.7 181.6 L544.7 162.1 L549.4 161.2 L554.2 162.1 L554.2 181.6" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M554.2 184.8 L554.2 181.6 L558.9 181.6 L563.6 184.8 L563.6 194.2 L560.5 206.8 L551.0 213.1 L538.4 213.1 L527.4 208.4 L522.7 200.5 L518.0 192.7 L516.4 187.9 L517.3 184.2 L520.8 184.8 L525.8 189.5" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="540" y="134" font-family="sans-serif" font-size="9" fill="#666" text-anchor="middle">Grab (open hand)</text>
 <ellipse cx="660.0" cy="184.0" rx="26.9" ry="26.9" fill="none" stroke="#e03131" stroke-width="2.5"/>
 <path d="M642.3 166.3 L677.7 201.7" fill="none" stroke="#e03131" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
