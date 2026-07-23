@@ -4,7 +4,7 @@
   "source": "https://github.com/JustGoscha/excalidraw-libs",
   "libraryItems": [
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "aMU0KwgYYgAo",
       "created": 1,
       "name": "Pointer (Arrow)",
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "sGKWqQqQWCmg",
       "created": 1,
       "name": "Hand pointer (Finger)",
@@ -390,7 +390,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "6EkmUIeA0Y2g",
       "created": 1,
       "name": "Text (I-beam)",
@@ -539,7 +539,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "OQe202IKyQqK",
       "created": 1,
       "name": "Crosshair",
@@ -735,7 +735,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "MEQMAaQeumew",
       "created": 1,
       "name": "Move (4-way)",
@@ -837,7 +837,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "uW0QEIWuqaMi",
       "created": 1,
       "name": "Resize ↕ (NS)",
@@ -892,7 +892,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "4m6ciy8ESgOG",
       "created": 1,
       "name": "Resize ↔ (EW)",
@@ -947,7 +947,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "wOwmWEgSGYko",
       "created": 1,
       "name": "Resize ⤡ (NWSE)",
@@ -1002,7 +1002,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "gs6AOgGm2iui",
       "created": 1,
       "name": "Resize ⤢ (NESW)",
@@ -1057,7 +1057,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "3kGygmC8EMSQ",
       "created": 1,
       "name": "Grabbing (closed hand)",
@@ -1364,7 +1364,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "8IgUYg48MMAk",
       "created": 1,
       "name": "Grab (open hand)",
@@ -1671,7 +1671,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "YccUeKkMo60C",
       "created": 1,
       "name": "Not allowed",
@@ -1755,7 +1755,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "AQU6yuWO6Wai",
       "created": 1,
       "name": "Zoom in",
@@ -1933,7 +1933,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "0YCQmGMEEeEs",
       "created": 1,
       "name": "Zoom out",
@@ -2064,7 +2064,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "k2OuLUcMKay2",
       "created": 1,
       "name": "Click / Tap",
@@ -2356,7 +2356,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "aiWkeueq0YGm",
       "created": 1,
       "name": "Double click",
@@ -2489,7 +2489,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "6kiOIGgqOokm",
       "created": 1,
       "name": "Long press / Hold",
@@ -2593,7 +2593,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "uoWwEEcGMOmc",
       "created": 1,
       "name": "Drag",
@@ -2719,7 +2719,7 @@
       ]
     },
     {
-      "status": "published",
+      "status": "unpublished",
       "id": "Kokgum2wSCpS",
       "created": 1,
       "name": "Pointer + click",

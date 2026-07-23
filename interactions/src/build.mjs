@@ -234,7 +234,7 @@ add("Pointer + click", [
 const libraryItems = items.map((it) => {
   const gid = id();
   const elements = it.shapes.map((el) => ({ ...el, groupIds: [gid] }));
-  return { status: "published", id: id(), created: 1, name: it.name, elements };
+  return { status: "unpublished", id: id(), created: 1, name: it.name, elements };
 });
 
 const lib = {
